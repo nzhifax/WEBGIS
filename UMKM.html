@@ -10,6 +10,7 @@
   <!-- SwiperJS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js">
   </script>
   
@@ -25,8 +26,6 @@
     html {
       scroll-behavior: smooth;
     }
-
-
     body {
       background-color: #fff;
       color: #333;
@@ -123,31 +122,6 @@ nav.desktop a {
         display: none;
       }
     }
-
-    
-    header.hero-header {
-      text-align: center;
-      padding: 4rem 1rem 3rem;
-      background: linear-gradient(135deg, #2E7D32, #ccff9d);
-      color: white;
-      position: relative;
-    }
-
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background-color: #fff;
-      border-radius: 2px;
-    }
-
-    header.hero-header h1 { font-size: 36px; margin-bottom: 8px; }
-    header.hero-header p { font-size: 16px; margin: 0; opacity: 0.9; }
-
     .filters {
       display: flex;
       justify-content: center;
@@ -170,7 +144,7 @@ nav.desktop a {
     #filterKategori:focus {
       border-color: #2E7D32;
       outline: none;
-      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+      box-shadow: 0 0 0 3px rgba(38, 119, 6, 0.2);
     }
 
     .gallery {
@@ -232,7 +206,7 @@ nav.desktop a {
     }
 
     .card-body button:hover {
-      background-color: #1eceff;
+      background-color: #bfc181;
       transform: scale(1.03);
     }
 
@@ -393,6 +367,49 @@ nav.desktop a {
         font-size: 1rem;
       }
     }
+
+    .title-with-double-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title-icon {
+  width: 150px;
+  height: auto;
+}
+
+/* .section-title {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #2e6b30;
+  text-align: center;
+} */
+
+.section-title {
+  font-size: 2rem;
+  color: #2e6b30;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #2e6b30;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+ .section-keji {
+ text-align: center;
+      margin: 40px 0 10px;
+      color: #2e6b30;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);         /* putih pudar */
+}
+
+.section-keji h2 {
+ text-align: center;
+      margin: 40px 0 10px;
+      color: #2e6b30;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);         /* putih pudar */
+}
   </style>
 
 
@@ -407,19 +424,18 @@ nav.desktop a {
         <a class="nav-link" href="Index.html">Beranda</a>
         <a class="nav-link" href="Informasi.html">Informasi</a>
         <a class="nav-link" href="UMKM.html">UMKM</a>
-        <!-- <a class="nav-link" href="Tentang.html">Tentang</a> -->
-        <!-- <a href="Map.html" class="dashboard-button">Dashboard Peta</a> -->
+        <a class="nav-link" href="dashboard.html">Dashboard Peta</a>
       </nav>
     </div>
   </header>
 
-<div class="hero">
-    <img src="assets/umkmlanding.jpg" alt="Hero UMKM" />
-    <div class="hero-text">
-      <h1>UMKM Dusun Keji</h1>
-      <p>Galeri pelaku UMKM dari seluruh wilayah Dusun Keji</p>
+  <section class="section-keji">
+  <div data-aos="fade-up">
+    <div class="title-with-double-image">
+      <img src="assets/batik.png" alt="Ikon Kiri" class="title-icon" />
+      <h2 class="section-title">UMKM Dusun Keji</h2>
+      <img src="assets/batik.png" alt="Ikon Kanan" class="title-icon" />
     </div>
-  </div>
 
 
   <div class="filters">
@@ -452,78 +468,409 @@ nav.desktop a {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
   const maps = [
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
-    {
-      nama: 'Teh Desa Indonesia',
-      kategori: 'kuliner',
-      image: 'assets/tehdesa.JPEG',
-      mapsUrl: 'https://www.google.com/maps?q=-7.8014,110.3644'
-    },
+   {
+    nama: 'Ayam Geprek Puber',
+    kategori: 'kuliner',
+    image: 'assets/puber.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/QXcJSgDMoEYCK3ja7'
+  },
+  {
+    nama: 'Bakso & Mie Ayam "Family"',
+    kategori: 'kuliner',
+    image: 'assets/family.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/CWWnPkcTGFdiGBXe9'
+  },
+  {
+    nama: 'Bengkel Perut Mbak Yanti',
+    kategori: 'kuliner',
+    image: 'assets/bengkel.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/xRXmvB1554GgMxGj6'
+  },
+  {
+    nama: 'Bubur Pagi dan Gorengan Mbak Jah',
+    kategori: 'kuliner',
+    image: 'assets/mbahjah.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/4CW9QPixP1rZLas48'
+  },
+  {
+    nama: 'Es Teler C52',
+    kategori: 'kuliner',
+    image: 'assets/estelerc52.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/VvTD6xGAzxmNzpTA6'
+  },
+  {
+    nama: 'Nasi Goreng Mak Ti',
+    kategori: 'kuliner',
+    image: 'assets/makti.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/5B2pKpkKLBGmQerD7'
+  },
+  {
+    nama: 'Pitik Goreng 5758',
+    kategori: 'kuliner',
+    image: 'assets/pitikgoreng.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/xo6nqQJTHqReMj9U8'
+  },
+  {
+    nama: 'Sate Ayam Madura Cak Rowi',
+    kategori: 'kuliner',
+    image: 'assets/rowi.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/4LLWtj5HT3QaZBZP6'
+  },
+  {
+    nama: 'Sempol Cilor Mbak Suci',
+    kategori: 'kuliner',
+    image: 'assets/sempol.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/QXcJSgDMoEYCK3ja7'
+  },
+  {
+    nama: 'Teh Desa Indonesia',
+    kategori: 'kuliner',
+    image: 'assets/tehdesa.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/xFKnnzm45ST5fp7A6'
+  },
+  {
+    nama: 'Warung Makan Ibu Sulastri',
+    kategori: 'kuliner',
+    image: 'assets/sulastri.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/X1SRKbTm25HP3Lqi8'
+  },
+  {
+    nama: 'Warung Mbah Ikuk',
+    kategori: 'kuliner',
+    image: 'assets/mbahikuk.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/uoAaSWR9EWeLNPNz7'
+  },
+  {
+    nama: 'Warung Teras Bu Win',
+    kategori: 'kuliner',
+    image: 'assets/win.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/eDsioNtZ5THeTr5r6'
+  },
+  {
+    nama: 'Peyek Kacang Pradana',
+    kategori: 'kuliner',
+    image: 'assets/pradana.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/kRBo3NTa3xowvz56A'
+  },
+  {
+    nama: 'Warmindo Mbak Poer',
+    kategori: 'kuliner',
+    image: 'assets/mbakpoer.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/eymC4ptsreaYdm6H8'
+  },
+  {
+    nama: 'Perbatasan (Tempat Makan)',
+    kategori: 'kuliner',
+    image: 'assets/perbatasan.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/vCJBEYvqMXhqsqMTA'
+  },
+
+   {
+    nama: 'Barracuda Store',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/barracuda.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/9PP8zqsEMDTRRcW1A'
+  },
+  {
+    nama: 'Dompet Bin-bin',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/binbin.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/zLz5ut95CLkLYHtj8'
+  },
+  {
+    nama: 'Keji Cell',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/kejicell.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/Q38grN6qCQPqTNB99'
+  },
+  {
+    nama: 'Rio Fish',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/riofish.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/hksmD3EBcxiFcS5p7'
+  },
+  {
+    nama: 'Sayur dan Buah Pak Parsi',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/parsi.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/wbvADwQTHDhnagWx9'
+  },
+  {
+    nama: 'Tempe Super "Azka Davin"',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/tempe.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/eTBbKNZrSRwAifzm7'
+  },
+  {
+    nama: 'Ikan Pipit',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/pipit.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/DxB4HiRYbmNU8GYB9'
+  },
+  {
+    nama: 'Abong Cat - Body Repair & Paint Specialist',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/abong.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/fzLQs6tAS7nyJ5Es5'
+  },
+  {
+    nama: 'Omah Jahit Naura',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/naura.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/qjg75YLR6P4hqPht5'
+  },
+  {
+    nama: 'Toko Edi',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/edi.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/cghknKasB9tmG1n8A'
+  },
+  {
+    nama: 'Toko Pak Doreva',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/doreva.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/akz6xRxnDTvPvhTA7'
+  },
+  {
+    nama: 'Warung Bu Yatmi',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/yatmi.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/LbSfJPQfgAvSgAJPA'
+  },
+  {
+    nama: 'Warung Ibu Sutirah',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/sutirah.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/GMRLQJK7EVNC5EoL9'
+  },
+  {
+    nama: 'Warung Plastik Bu Darminah',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/darminah.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/f51rVVGgEdTHYks86'
+  },
+  {
+    nama: 'Warung Sembako Bu Sudarminah',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/sudarminah.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/tWk529GPRD2bvugP8'
+  },
+  {
+    nama: 'Warung Sembako Bu Sumini',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/sumini.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/zR7Ggyvwkyv5n1k47'
+  },
+  {
+    nama: 'Warung Pak Parno',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/parno.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/c8WWQPMcPRu3xRnX9'
+  },
+  {
+    nama: 'Permak Bu Lusi',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/lusi.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/3Zv4Un3m4nbkk1UZ9'
+  },
+  {
+    nama: 'Kevin Steam',
+    kategori: 'Barang dan Jasa',
+    image: 'assets/kevinsteam.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/fPfkWodfYNRGQeaA8'
+  },
+
+  {
+    nama: 'Pengrajin Batu Pak Mohono',
+    kategori: 'Kerajinan batu',
+    image: 'assets/mohono.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/gkQe3wSc98UAuWH96'
+  },
+  {
+    nama: 'Ade Stone',
+    kategori: 'Kerajinan batu',
+     image: 'assets/ade.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/DmTpRwC4jTbJ4etu7'
+  },
+  {
+    nama: 'Cobek Batu Khas Muntilan',
+    kategori: 'Kerajinan batu',
+     image: 'assets/cobekmuntilan.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/fPfkWodfYNRGQeaA8'
+  },
+  {
+    nama: 'Cowek Watu',
+    kategori: 'Kerajinan batu',
+     image: 'assets/cowekwatu.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/iyoLyxMsuhh5Zd9W7'
+  },
+  {
+    nama: 'Karya Devi Galery',
+    kategori: 'Kerajinan batu',
+     image: 'assets/devi.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/6u5FqAcLKHTR51AC6'
+  },
+  {
+    nama: 'Pahat Batu Pak Ayis',
+    kategori: 'Kerajinan batu',
+     image: 'assets/ayis.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/NF7mf8EHCH2HiWr3A'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Pranoto',
+    kategori: 'Kerajinan batu',
+     image: 'assets/pranoto.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/Huy5LhijmWbxyanW9'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Ashadi',
+    kategori: 'Kerajinan batu',
+     image: 'assets/ashadi.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/QttZXRjwaCoEupvn6'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Dulkafi',
+    kategori: 'Kerajinan batu',
+     image: 'assets/dulkafi.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/yTzrw2u2RZ6DeVwz5'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Edi',
+    kategori: 'Kerajinan batu',
+     image: 'assets/edi.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/HHfGA9GRAvJdNLZY7'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Eko',
+    kategori: 'Kerajinan batu',
+     image: 'assets/eko.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/r5Dp3Lwyqptfv3JZ7'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Harianto',
+    kategori: 'Kerajinan batu',
+     image: 'assets/harianto.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/mA5ih2dmFmx5bmAo7'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Nursoleh',
+    kategori: 'Kerajinan batu',
+     image: 'assets/nursoleh.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/wQyVSkJFxBtEFDRM8'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Pranowo',
+    kategori: 'Kerajinan batu',
+     image: 'assets/pranowo.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/nAHMd2TdJM6eRgt57'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Samsudin',
+    kategori: 'Kerajinan batu',
+     image: 'assets/samsudin.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/baSxiJgp5P2YVut57'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Slamet Dhakir',
+    kategori: 'Kerajinan batu',
+     image: 'assets/slamet.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/s9vxfmnvQKE5hVQV6'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Sukendar',
+    kategori: 'Kerajinan batu',
+     image: 'assets/sukendar.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/uFmknVR1BHNJmEkm7'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Sutrisno',
+    kategori: 'Kerajinan batu',
+     image: 'assets/sutrisno.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/E88Yf6Drq1SRwAYf8'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Teguh',
+    kategori: 'Kerajinan batu',
+     image: 'assets/teguh.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/9oVcKo7GXdaX8hwc7'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Trimono',
+    kategori: 'Kerajinan batu',
+     image: 'assets/trimono.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/bZm1hPm9ksD9xKUh8'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Yoso',
+    kategori: 'Kerajinan batu',
+     image: 'assets/yoso.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/QxoewqwnjMK46jwa8'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Restiyono',
+    kategori: 'Kerajinan batu',
+     image: 'assets/restiyono.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/gJ94AQCEUD1JX7kV9'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Purwanto',
+    kategori: 'Kerajinan batu',
+     image: 'assets/purwanto.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/eGpjhWNp1jZ3vyc9A'
+  },
+  {
+    nama: 'Rafian Stone',
+    kategori: 'Kerajinan batu',
+    mapsUrl: 'https://maps.app.goo.gl/yfZaSx7PUqi6Lj4U8'
+  },
+  {
+    nama: 'Wildan Art Stone',
+    kategori: 'Kerajinan batu',
+     image: 'assets/wildan.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/Wkw1jQCearkLBPND9'
+  },
+  {
+    nama: 'Griyo Selo Mas Puther',
+    kategori: 'Kerajinan batu',
+     image: 'assets/griyoselo.jpg',
+    mapsUrl: 'https://maps.app.goo.gl/wDnYMYSnCFTWszia7'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Cahyo',
+    kategori: 'Kerajinan batu',
+     image: 'assets/cahyo.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/Zq8d7Cmsrt9EketS8'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Joni',
+    kategori: 'Kerajinan batu',
+     image: 'assets/joni.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/SWLkA5ocbGcqapL16'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Pranoto',
+    kategori: 'Kerajinan batu',
+     image: 'assets/pranoto.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/cqxxQKpfWtymE6fw8'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Romadona',
+    kategori: 'Kerajinan batu',
+     image: 'assets/romadona.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/UCs1JRECYozvVtXY9'
+  },
+  {
+    nama: 'Pengrajin Batu Pak Supri',
+    kategori: 'Kerajinan batu',
+     image: 'assets/supri.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/ox9UK59vNw6q7S1Z8'
+  },
+  {
+    nama: 'Heru Stone',
+    kategori: 'Kerajinan batu',
+     image: 'assets/heru.JPEG',
+    mapsUrl: 'https://maps.app.goo.gl/7jAJAQMqUbabZ5CR7'
+  }
   ];
 
   const gallery = document.getElementById('umkmGrid');

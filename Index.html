@@ -349,6 +349,73 @@ nav.desktop a {
   transform: scale(1.2);
 }
 
+.section-title {
+  font-size: 2rem;
+  color: #2e6b30;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #2e6b30;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+ .title-with-double-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title-icon {
+  width: 150px;
+  height: auto;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #2e6b30;
+  text-align: center;
+}
+
+.highlight {
+  display: inline-block;
+  position: relative;
+  font-weight: 600;
+  color: #2e6b30;
+  z-index: 1;
+  padding: 0 4px;
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.1em;
+  width: 100%;
+  height: 40%;
+  background-color: #c2f0c2; /* warna hijau pastel highlight */
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+.highlight:hover::before {
+  background-color: #a3e6a3;
+}
+
+  .section-keji {
+ text-align: center;
+      margin: 40px 0 10px;
+      color: #2e6b30;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);         /* putih pudar */
+}
+
+.section-keji h2 {
+ text-align: center;
+      margin: 40px 0 10px;
+      color: #2e6b30;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);         /* putih pudar */
+}
+
 
   </style>
 </head>
@@ -361,7 +428,7 @@ nav.desktop a {
         <a class="nav-link" href="Index.html">Beranda</a>
         <a class="nav-link" href="Informasi.html">Informasi</a>
         <a class="nav-link" href="UMKM.html">UMKM</a>
-        <!-- <a class="nav-link" href="Tentang.html">Tentang</a> -->
+        <a class="nav-link" href="dashboard.html">Dashboard Peta</a>
         <!-- <a href="Map.html" class="dashboard-button">Dashboard Peta</a> -->
       </nav>
     </div>
@@ -383,21 +450,33 @@ nav.desktop a {
     </div>
   </section>
 
-  <h2>Kenali Lebih Dekat Dusun Keji</h2>
-  <p class="subtitle">Tiga fitur utama untuk mengenal Keji secara langsung</p>
+  <!-- <h2>Kenali Lebih Dekat Dusun Keji</h2>
+  <p class="subtitle">Tiga fitur utama untuk mengenal Keji secara langsung</p> -->
+<section class="section-keji">
+  <div data-aos="fade-up">
+    <div class="title-with-double-image">
+      <img src="assets/batik.png" alt="Ikon Kiri" class="title-icon" />
+      <h2 class="section-title">Kenali Lebih Dekat Dusun Keji</h2>
+      <img src="assets/batik.png" alt="Ikon Kanan" class="title-icon" />
+    </div>
+  <p>
+   <span class="highlight">Tiga fitur</span> untuk mengenal Keji secara langsung
+  </p>
+</div>
+
 
 <div class="features-grid" id="fitur">
   <a href="Informasi.html" class="feature-card">
     <img src="assets/LANDING.png" alt="Info" />
-    <h4>InfoKEJI: Semua Informasi Dusun</h4>
+    <h4>InfoKEJI: Semua Informasi Dusun Keji</h4>
   </a>
   <a href="UMKM.html" class="feature-card">
     <img src="assets/LANDING.png" alt="UMKM" />
-    <h4>UsahaKEJI: Produk Lokal Kami</h4>
+    <h4>UsahaKEJI: Produk Lokal Dusun Keji</h4>
   </a>
-  <a href="peta.html" class="feature-card">
+  <a href="dashboard.html" class="feature-card">
     <img src="assets/LANDING.png" alt="Peta" />
-    <h4>LensaKEJI: Potret Kehidupan Warga</h4>
+    <h4>PetaKEJI: Peta Interaktif Dusun Keji</h4>
   </a>
 </div>
 

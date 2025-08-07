@@ -8,11 +8,15 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 
-  <!-- SwiperJS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js">
+  
+</script>
 
 <link rel="stylesheet" href="peta/leaflet.css">
   <link rel="stylesheet" href="peta/style/style.css">
@@ -94,41 +98,6 @@ nav.desktop a {
   width: 100%;
 }
 
-
-    .dashboard-button {
-      background-color: #447f4b;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .dashboard-button:hover {
-      background-color: #36653c;
-    }
-
-    @media screen and (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      nav.desktop {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 10px;
-      }
-
-      nav.desktop.show {
-        display: flex;
-      }
-
-      .dashboard-button {
-        display: none;
-      }
-    }
-
    .section-keji {
  text-align: center;
       margin: 40px 0 10px;
@@ -163,212 +132,50 @@ nav.desktop a {
   text-align: center;
 }
 
-.keji-description {
-  flex: 1 1 500px;
-  padding-left: 1%;
-  text-align: left;
+@media (max-width: 768px) {
+  .keji-container {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .keji-description {
+    padding-left: 0;
+    text-align: center;
+  }
 }
 
-.keji-description p {
-  margin-bottom: 16px;
-  color: #000000;
-line-height: 1.75;
-font-size: 17px;
-}
-
-.rtrw-container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0 20px;
-  overflow: visible;
-}
-
-.glow-subtext {
- text-align: center;
-      margin: 40px 0 10px;
-      color: #2e6b30;
-      font-size: clamp(1.5rem, 2.5vw, 2rem); 
-}
-
-.rtrw-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-  padding: 0 20px;
-}
-
-.rtrw-card {
-display: block;
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  text-align: center;
-  padding: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  text-decoration: none;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-.rtrw-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-.rtrw-card img {
-  width: 100%;
-  /* height: 300px; /* kamu bisa sesuaikan */
-  object-fit: cover; /* bikin gambar full tapi tetap proporsional */
-  display: block; */
-  width: 100%;         /* agar slide-nya full lebar container */
-  max-width: 90vw;     /* batasi sedikit biar ada padding */
-  box-sizing: border-box;
-  margin: 0 auto;      /* tengahin secara horizontal */
-}
-.rtrw-info {
-  padding: 15px;
-}
-
-.rtrw-info h4 {
-  margin-top: 12px;
-  font-size: 16px;
+.highlight {
+  display: inline-block;
+  position: relative;
   font-weight: 600;
-  color: #2E7D32;
+  color: #2e6b30;
+  z-index: 1;
+  padding: 0 4px;
 }
 
-.rtrw-info p {
-  font-size: 0.95rem;
-  color: #000000;
+.highlight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.1em;
+  width: 100%;
+  height: 40%;
+  background-color: #c2f0c2; /* warna hijau pastel highlight */
+  z-index: -1;
+  transition: background-color 0.3s ease;
 }
 
-.rtrw-swiper {
-  padding: 50px 0;
+.highlight:hover::before {
+  background-color: #a3e6a3;
 }
 
-.swiper-slide.rtrw-card {
-  width: 100% !important;
-  max-width: 300px;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #2E7D32;
-}
-
-.swiper-slide {
-  width: auto; /* atau 100% tergantung layout */
-  justify-content: center; /* supaya card-nya di tengah */
-    /* flex-shrink: 0; */
-}
-
-.swiper-wrapper {
-  width: auto;
-}
-
-    h2 {
-      text-align: center;
-      margin: 40px 0 10px;
-      color: #2e6b30;
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-    }
-
-    .subtitle {
-      text-align: center;
-      font-size: 14px;
-      margin-bottom: 30px;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 50px;
-      padding: 0 20px;
-    }
-
-    .feature-card {
-      background-color: #ffffff;
-      border-radius: 10px;
-      width: 250px;
-      overflow: hidden;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .feature-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .feature-card h4 {
-      padding: 10px;
-      color: #2e6b30;
-      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    }
-
-    .testimonial {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 40px;
-      padding: 0 20px;
-    }
-
-    .testimonial img {
-      width: 150px;
-      border-radius: 10px;
-    }
-
-    .quote {
-      max-width: 500px;
-      font-size: 14px;
-      position: relative;
-      padding-left: 20px;
-      color: #333;
-    }
-
-    .quote::before {
-      content: "“";
-      font-size: 50px;
-      color: #2e6b30;
-      position: absolute;
-      left: 0;
-      top: -10px;
-    }
-
-    .quote::after {
-      content: "”";
-      font-size: 50px;
-      color: #2e6b30;
-      position: absolute;
-      right: 0;
-      bottom: -10px;
-    }
-
-    .quote-footer {
-      margin-top: 10px;
-      font-style: italic;
-      font-size: 13px;
-      color: #555;
-    }
 
 .footer {
   background: transparent;
   color: #447f4b;
   text-align: center;
   padding: 24px 16px;
-  margin-top: 60px;
+  margin-top: 0px;
   font-size: 13px;
   border-top: 1.5px solid #447f4b;
   border-radius: 20px 20px 0 0;
@@ -392,6 +199,220 @@ display: block;
   transform: scale(1.2);
 }
 
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid #447f4b;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+  font-size: 2rem;
+  width: fit-content;
+  margin: auto;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #447f4b }
+}
+.keyword {
+  background-color: #e6f5e9;
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: #2e6b30;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.keyword:hover {
+  background-color: #cfeecf;
+  transform: scale(1.05);
+}
+
+.callout {
+  background: #f0fdf4;
+  border-left: 5px solid #2e6b30;
+  padding: 12px 16px;
+  margin: 20px 0;
+  font-size: 16px;
+  font-style: italic;
+  border-radius: 6px;
+}
+
+.counter-box {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2e6b30;
+}
+
+
+.map-container {
+  margin-top: 1rem;
+  /* border: 2px solid #cde6d0; */
+  border-radius: 8px;
+  overflow: hidden;
+}
+.section-title {
+  font-size: 2rem;
+  color: #2e6b30;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #2e6b30;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.horizontal-section {
+  height: auto;
+  padding: 0;         /* hapus padding di container utama */
+  margin: 0;
+}
+
+    .scroll-container {
+      display: flex;
+      height: 100%;
+    }
+
+    .panel {
+      flex: 0 0 100vw;
+      height: auto;   
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: #ffffff;
+    }
+
+    .panel h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .panel p {
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
+
+    .panel ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .panel ul li {
+      margin-bottom: 8px;
+    }
+
+    /* ==== Media Gallery Panel ==== */
+    .media-gallery {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    .media-card {
+      width: 300px;
+      height: 450px;
+      border-radius: 24px;
+      overflow: hidden;
+      background-color: #000000;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+
+    .media-card img,
+    .media-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .spacer {
+      height: 50vh;
+      background-color: #ffffff;
+    }
+    .interactive-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .title-with-double-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title-icon {
+  width: 150px;
+  height: auto;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #2e6b30;
+  text-align: center;
+}
+
+.section-wilayah {
+  padding: 40px 20px;
+  background-color: #f9fcf9;
+}
+
+.section-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #2e6b30;
+}
+
+.section-description {
+  font-size: 1rem;
+  margin-bottom: 32px;
+  color: #333;
+}
+
+.wilayah-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.wilayah-card {
+  background: #ffffff;
+  border-left: 5px solid #2e6b30;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 15px;
+  font-size: 16px;      /* Atur sesuai preferensi, misalnya 16px */
+  line-height: 1.6;     /* Supaya teks lebih mudah dibaca */
+  color: #444;          /* Warna teks abu gelap */
+}
+
+.wilayah-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.wilayah-card h3 {
+  margin-bottom: 8px;
+  color: #2e6b30;
+}
+
   </style>
 </head>
 <body>
@@ -403,120 +424,122 @@ display: block;
         <a class="nav-link" href="Index.html">Beranda</a>
         <a class="nav-link" href="Informasi.html">Informasi</a>
         <a class="nav-link" href="UMKM.html">UMKM</a>
-        <!-- <a class="nav-link" href="Tentang.html">Tentang</a> -->
+        <a class="nav-link" href="dashboard.html">Dashboard Peta</a>
         <!-- <a href="Map.html" class="dashboard-button">Dashboard Peta</a> -->
       </nav>
     </div>
   </header>
 
+
 <section class="section-keji">
-  <h2 class="glow-text">WILAYAH DUSUN KEJI</h2>
-  <div class="keji-container">
-    <div class="keji-image">
-      <img src="assets/petakeji.png" alt="Wilayah Dusun Keji" />
-    </div>
-    <div class="keji-description">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-       <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-       <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </div>
-  </div>
-<div class="rtrw-container">
-  <h3 class="glow-subtext">Informasi RT/RW</h3>
-  <!-- Swiper -->
-  <div class="swiper rtrw-swiper">
-    <div class="swiper-wrapper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide rtrw-card">
-        <img src="assets/RT1RW5.png" alt="RT 01" />
-        <div class="rtrw-info">
-          <h4>RT 01 / RW 05</h4>
-          <p>Luas wilayah ± 1.2 Ha. Mayoritas lahan pertanian & rumah tinggal.</p>
-        </div>
-      </div>
-      <!-- Slide 2 -->
-      <div class="swiper-slide rtrw-card">
-        <img src="assets/RT1RW5.png" alt="RT 01" />
-        <div class="rtrw-info">
-          <h4>RT 02 / RW 05</h4>
-          <p>Luas wilayah ± 1.5 Ha. Campuran rumah tinggal dan kebun rakyat. Luas wilayah ± 1.5 Ha. Campuran rumah tinggal dan kebun rakyat.
-            Luas wilayah ± 1.5 Ha. Campuran rumah tinggal dan kebun rakyat.
-            Luas wilayah ± 1.5 Ha. Campuran rumah tinggal dan kebun rakyat.
-            Luas wilayah ± 1.5 Ha. Campuran rumah tinggal dan kebun rakyat.
-            Luas wilayah ± 1.5 Ha. Campuran rumah tinggal dan kebun rakyat.
-          </p>
-        </div>
-      </div>
-      <!-- Slide 3 -->
-      <div class="swiper-slide rtrw-card">
-        <img src="assets/RT1RW5.png" alt="RT 03" />
-        <div class="rtrw-info">
-          <h4>RT 03 / RW 05</h4>
-          <p>Wilayah dekat fasilitas umum dan memiliki kepadatan sedang.</p>
-        </div>
-      </div>
-      <div class="swiper-slide rtrw-card">
-        <img src="assets/RT1RW5.png" alt="RT 01" />
-        <div class="rtrw-info">
-          <h4>RT 01 / RW 05</h4>
-          <p>Luas wilayah ± 1.2 Ha. Mayoritas lahan pertanian & rumah tinggal.</p>
-        </div>
-      </div>
-      <div class="swiper-slide rtrw-card">
-        <img src="assets/RT1RW5.png" alt="RT 01" />
-        <div class="rtrw-info">
-          <h4>RT 01 / RW 05</h4>
-          <p>Luas wilayah ± 1.2 Ha. Mayoritas lahan pertanian & rumah tinggal.</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Navigasi -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-
-    <!-- Pagination (opsional) -->
-    <div class="swiper-pagination"></div>
-  </div>
-</div>
+  <section class="section-keji">
+  <div data-aos="fade-up">
+    <div class="title-with-double-image">
+      <img src="assets/batik.png" alt="Ikon Kiri" class="title-icon" />
+      <h2 class="section-title">Profil Singkat Dusun Keji</h2>
+      <img src="assets/batik.png" alt="Ikon Kanan" class="title-icon" />
+    </div>
+  <p>
+    Terletak di <span class="highlight">jantung Desa Keji</span>, Kecamatan Muntilan, Kabupaten Magelang, 
+    <strong>Dusun Keji</strong> dikenal sebagai wilayah yang sarat akan <span class="highlight">warisan budaya</span> dan semangat kebersamaan warganya. 
+    Suasana <span class="highlight">asri, tenang, dan ramah</span> menjadikan dusun ini tidak hanya mempertahankan <em>kearifan lokal</em>, 
+    tetapi juga terbuka terhadap inovasi zaman.
+  </p>
 </div>
 
-</section>
+<div data-aos="fade-up" data-aos-delay="100">
+  <p>
+    Salah satu kebanggaan masyarakat Dusun Keji adalah <span class="highlight">kerajinan pahat batu</span> — keahlian yang telah diwariskan dari 
+    <span class="highlight">generasi ke generasi</span>. Produk-produk seperti <strong>cobek, lumpang, nisan, hingga ornamen arsitektur</strong> 
+    telah menjadi <span class="highlight">identitas ekonomi lokal</span> yang tidak hanya terkenal di Magelang, 
+    tapi juga menjangkau berbagai daerah di Indonesia.
+  </p>
+</div>
 
-  <h2>Kenali Lebih Dekat Dusun Keji</h2>
-  <p class="subtitle">Tiga fitur utama untuk mengenal Keji secara langsung</p>
+  <div class="callout">
+  🪨 Dusun Keji dikenal sebagai sentra kerajinan pahat batu dengan semangat gotong royong dan pelestarian budaya lokal.
+</div>
 
-  <div class="features" id="fitur">
-    <div class="feature-card">
-      <img src="assets/LANDING.png" alt="Info" />
-      <h4>InfoKEJI: Semua Informasi Dusun</h4>
+<section class="horizontal-section">
+    <div class="scroll-container" id="scroll-content">
+
+      <div class="panel">
+        <div class="media-gallery">
+          <div class="media-card">
+            <video src="assets/LANDING.png" autoplay muted loop playsinline></video>
+          </div>
+          <div class="media-card">
+            <img src="assets/LANDING.png" alt="Photo 1" />
+          </div>
+          <div class="media-card">
+            <video src="assets/LANDING.png" autoplay muted loop playsinline></video>
+          </div>
+          <div class="media-card">
+            <img src="assets/LANDING.png" alt="Photo 1" />
+          </div>
+          <div class="media-card">
+            <video src="assets/LANDING.png" autoplay muted loop playsinline></video>
+          </div>
+          <div class="media-card">
+            <img src="assets/LANDING.png" alt="Photo 1" />
+          </div>
+          <div class="media-card">
+            <video src="assets/LANDING.png" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="feature-card">
-      <img src="assets/LANDING.png" alt="Usaha" />
-      <h4>UsahaKEJI: Produk Lokal Kami</h4>
+  </section>
+
+<section class="section-keji">
+  <div data-aos="fade-up">
+    <div class="title-with-double-image">
+      <img src="assets/batik.png" alt="Ikon Kiri" class="title-icon" />
+      <h2 class="section-title">Stuktur Wilayah Dusun Keji</h2>
+      <img src="assets/batik.png" alt="Ikon Kanan" class="title-icon" />
     </div>
-    <div class="feature-card">
-      <img src="assets/LANDING.png" alt="Lensa" />
-      <h4>LensaKEJI: Potret Kehidupan Warga</h4>
+  <p>
+    Peta wilayah Dusun Keji menggambarkan struktur administratif yang rapi dan adaptif terhadap kondisi geografis. 
+    <span class="highlight">Dusun Keji terdiri dari enam RT</span>, yang masing-masing memiliki karakteristik lingkungan dan peran sosial yang berbeda.
+  </p>
+  
+</div>
+    <div class="wilayah-cards">
+      <div class="wilayah-card">
+        <h3>RT 01/05</h3>
+        <p>Membentang dari selatan ke barat dusun, didominasi oleh lahan pertanian dan hunian jarang.</p>
+      </div>
+      <div class="wilayah-card">
+        <h3>RT 01/06</h3>
+        <p>Terletak di sisi barat laut, berbatasan langsung dengan Dusun Sidikan dan Keniten.</p>
+      </div>
+      <div class="wilayah-card">
+        <h3>RT 02/05 & RT 02/06</h3>
+        <p>Merupakan pusat permukiman padat serta pusat interaksi sosial masyarakat di tengah hingga timur dusun.</p>
+      </div>
+      <div class="wilayah-card">
+        <h3>RT 03/06</h3>
+        <p>Berada di timur laut, dekat dengan Desa Pucungrejo dan menjadi pusat kegiatan masyarakat.</p>
+      </div>
     </div>
+
+<section class="section-keji">
+  <div data-aos="fade-up">
+    <div class="title-with-double-image">
+      <img src="assets/batik.png" alt="Ikon Kiri" class="title-icon" />
+      <h2 class="section-title">Peta Interaktif Batas Administrasi Dusun Keji</h2>
+      <img src="assets/batik.png" alt="Ikon Kanan" class="title-icon" />
+    </div>
+  <p>
+    Melalui <em>peta interaktif</em> yang dilengkapi dengan <span class="highlight">batas RT/RW berwarna</span>, jalan utama, dan jalur kecil, 
+    warga dapat memahami posisi wilayahnya secara spasial. Peta ini berfungsi tidak hanya sebagai alat navigasi, tetapi juga alat partisipasi sosial 
+    dan perencanaan pembangunan.
+  </p>
+  <div class="map-container">
+    <iframe src="assets/RTRW/index.html" frameborder="0" style="width: 100%; height: 450px;" allowfullscreen></iframe>
   </div>
-
-  <div class="testimonial">
-    <img src="assets/LANDING.png" alt="Kepala Desa" />
-    <div class="quote">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-      <div class="quote-footer">~ Kepala Desa / Kepala Dusun</div>
-    </div>
-  </div>
+</div>
 
 <footer class="footer">
   <div class="social-icons">
@@ -527,51 +550,55 @@ display: block;
   <p>&copy; 2025 KEJIKITA. All rights reserved.</p>
 </footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script>
-    function toggleMenu() {
-      document.getElementById("navMenu").classList.toggle("show");
+  // Pastikan plugin ScrollTrigger terdaftar
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Tunggu hingga halaman dan elemen DOM siap
+  window.addEventListener("load", () => {
+    const scrollContent = document.getElementById("scroll-content");
+
+    // Pastikan elemen target ada
+    if (!scrollContent) {
+      console.warn("Elemen #scroll-content tidak ditemukan!");
+      return;
     }
-  </script>
 
-  <script>
-  const rtrwSwiper = new Swiper('.rtrw-swiper', {
-    loop: true,
-    slidesPerView: 1, 
-    spaceBetween: 16,
-    grabCursor: true,
-    centeredSlides: false,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-      },
-      640: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-      1440: {
-        slidesPerView: 4,
-      },
-    },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
+    // Buat animasi horizontal scroll dengan ScrollTrigger
+    gsap.to(scrollContent, {
+      x: () => -(scrollContent.scrollWidth - document.documentElement.clientWidth) + "px",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".horizontal-section",
+        start: "top top",
+        end: () => "+=" + scrollContent.scrollWidth,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        onUpdate: () => {
+          // Tambahkan styling ke pin-spacer setelah terbentuk
+          const spacer = document.querySelector(".pin-spacer");
+          if (spacer) {
+            spacer.style.backgroundColor = "white"; // ganti warna background di sini
+            spacer.style.transition = "background-color 0s ease-in-out";
+          }
+        }
+      }
+    });
   });
 </script>
 
 
+
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </body>
 </html>
