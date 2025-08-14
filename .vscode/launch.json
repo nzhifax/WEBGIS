@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open coba.html",
-            "file": "d:\\KKN\\WEBGIS\\coba.html"
+            "name": "Open Index.html",
+            "file": "d:\\KKN\\WEBGIS\\Index.html"
         }
     ]
 }
